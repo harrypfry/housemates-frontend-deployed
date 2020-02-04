@@ -18,3 +18,134 @@
 .nav {
   background: blue;
 }
+
+/* =======
+TOUR PAGE
+======== */
+
+.tour-page-header {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 32px !important;
+  margin: 0 !important;
+  margin-top: 24px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-page-menu-item {
+  padding: 0 7px !important;
+}
+
+.tour-page-menu {
+  margin: 0 12px 0 0 !important;
+  /* height: 20px !important; */
+}
+
+.tour-page-menu-container {
+  /* height: 20px; */
+  margin-right: 12px;
+}
+
+.offset-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 14px;
+}
+
+/* =======
+TOUR CARD
+======== */
+
+.tour-card-header {
+  font-size: 24px;
+  padding: 10px;
+}
+.tour-card-header:hover {
+  cursor: pointer;
+}
+
+.tour-card-item {
+  background-color: #a0a0a04b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 10px;
+  min-height: 138px;
+}
+
+.tour-card-rating {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.tour-card-col1 {
+  margin-top: 15px;
+  min-height: 123px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: start;
+  align-items: flex-start; */
+  flex: 1;
+}
+
+.tour-card-col2 {
+  flex: 1 0 400px;
+}
+
+.tour-card-row1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-card-vendor {
+  padding-left: 15px;
+  color: gray;
+}
+
+.tour-card-price {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 5px;
+}
+
+.tour-card-intro {
+  padding: 10px 10px 5px 10px;
+}
+
+.tour-card-image {
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.modal-image-container {
+  display: flex !important;
+  justify-content: center;
+  padding: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.modal-image {
+  border-radius: 5px;
+}
+
+.modal-title {
+  font-size: 24px !important;
+  padding: 0 10px 10px 10px !important;
+  text-align: center;
+}
+
+.modal-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button {
+  margin-bottom: 10px !important;
+}
