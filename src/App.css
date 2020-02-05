@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+/* ====
+NAV BAR
+===== */
+
+.nav-title {
+  font-family: "Crimson Text", serif;
+  font-weight: 800;
+  font-size: 24px;
+
+  padding: 15px 20px !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-item {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  padding: 13px 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav {
+  background: blue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* =======
+HOME PAGE
+======== */
+
+.home-page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.home-page-header {
+  padding: 48px !important;
+  font-size: 48px !important;
+}
+
+/* =======
+TOUR PAGE
+======== */
+
+.tour-page-header {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 32px !important;
+  margin: 0 !important;
+  margin-top: 24px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-page-menu-item {
+  padding: 0 7px !important;
+}
+
+.tour-page-menu {
+  margin: 0 12px 0 0 !important;
+  /* height: 20px !important; */
+}
+
+.tour-page-menu-container {
+  /* height: 20px; */
+  margin-right: 12px;
+}
+
+.offset-buttons {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+/* =======
+TOUR CARD
+======== */
+
+.tour-card-header {
+  font-size: 24px;
+  padding: 10px;
+}
+.tour-card-header:hover {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tour-page-search-container {
+  margin-left: 10px !important;
 }
+
+
+.tour-card-item {
+  background-color: #a0a0a04b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 10px;
+  min-height: 138px;
+}
+
+.tour-card-rating {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.tour-card-col1 {
+  margin-top: 15px;
+  min-height: 123px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tour-card-col2 {
+  flex: 1 0 400px;
+}
+
+.tour-card-row1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-card-vendor {
+  padding-left: 15px;
+  color: gray;
+}
+
+.tour-card-price {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 5px;
+}
+
+.tour-card-intro {
+  padding: 10px 10px 5px 10px;
+}
+
+.tour-card-image {
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.modal-image-container {
+  display: flex !important;
+  justify-content: center;
+  padding: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.modal-image {
+  border-radius: 5px;
+}
+
+.modal-title {
+  font-size: 24px !important;
+  padding: 0 10px 10px 10px !important;
+  text-align: center;
+}
+
+.modal-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button {
+  margin-bottom: 10px !important;
+}
+
+
+/*=============
+REGISTER PORTAL
+=============*/
+
+.submit-button-container {
+  text-align: center;
+}
+
+.register-segment {
+  min-width: 19%;
+}
+
+/*==============
+USER INFO PORTAL
+==============*/
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-avatar {
+  height: 100px;
+}
+

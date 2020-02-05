@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "semantic-ui-css/semantic.min.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+
+import { Router } from "@reach/router";
+
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Tours from "./components/Tours";
+
+import { withFirebase } from "./components/Firebase/";
+
+class App extends Component {
+  state = { authUser: null };
+
+  changeActiveItem = (e, item) => {
+    e.preventDefault();
+
+    this.setState({ activeItem: item });
+  };
+
+  componentDidMount() {
+    this.props.firebase.auth.onAuthStateChanged(authUser =>
+      authUser ? this.setState({ authUser }) : this.setState({ authUser: null })
+    );
+  }
+
+  componentWillUnmount() {
+    this.listener();
+  }
+
+  render() {
+    const { authUser } = this.state;
+    return (
+      <div>
+        <Navbar authUser={authUser} />
+        <Router>
+          <Home path="/" />
+          <Tours path="/tours" />
+        </Router>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withFirebase(App);
