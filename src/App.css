@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
+/* ====
+NAV BAR
+===== */
+
 .nav-title {
   font-family: "Crimson Text", serif;
   font-weight: 800;
@@ -17,6 +21,21 @@
 
 .nav {
   background: blue;
+}
+
+/* =======
+HOME PAGE
+======== */
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-page-header {
+  padding: 48px !important;
+  font-size: 48px !important;
 }
 
 /* =======
@@ -66,6 +85,11 @@ TOUR CARD
   cursor: pointer;
 }
 
+.tour-page-search-container {
+  margin-left: 10px !important;
+}
+
+
 .tour-card-item {
   background-color: #a0a0a04b;
   display: flex;
@@ -87,8 +111,6 @@ TOUR CARD
   min-height: 123px;
   display: flex;
   flex-direction: column;
-  /* justify-content: start;
-  align-items: flex-start; */
   flex: 1;
 }
 
@@ -149,3 +171,31 @@ TOUR CARD
 .modal-button {
   margin-bottom: 10px !important;
 }
+
+
+/*=============
+REGISTER PORTAL
+=============*/
+
+.submit-button-container {
+  text-align: center;
+}
+
+.register-segment {
+  min-width: 19%;
+}
+
+/*==============
+USER INFO PORTAL
+==============*/
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-avatar {
+  height: 100px;
+}
+

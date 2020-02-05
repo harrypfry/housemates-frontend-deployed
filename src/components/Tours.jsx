@@ -108,7 +108,8 @@ class Tours extends Component {
     sortOrder: "name",
     currentOffset: 0,
     moreData: false,
-    resultsPerPage: 5
+    resultsPerPage: 5,
+    searchTerm: ""
   };
 
   changeSortOrder = order => {
@@ -132,36 +133,38 @@ class Tours extends Component {
     this.fetchData();
   };
 
+  searchFunction = term => {
+    this.setState({ searchTerm: term, tourDataLoaded: false });
+  };
+
   componentDidUpdate = (prevProps, prevState) => {
-    if (
-      //   prevState.sortOrder !== this.state.sortOrder ||
-      //   prevState.currentOffset !== this.state.currentOffset
-      prevState.tourDataLoaded !== this.state.tourDataLoaded
-    ) {
+    if (prevState.tourDataLoaded !== this.state.tourDataLoaded) {
       this.fetchData();
     }
   };
 
   fetchData = () => {
-    axios
-      .get(
-        `http://triposo.com/api/20190906/tour.json?location_ids=Melbourne&order_by=${this.state.sortOrder}&offset=${this.state.currentOffset}&count=${this.state.resultsPerPage}&annotate=converted_price:AED&fields=intro,name,price,id,images,structured_content,booking_info,score&account=AZUHBLJH&token=luhn0k0fhlou5m4h52poe8c0fjpejzwt`
-      )
-      .then(({ data }) => {
-        this.setState({
-          tourData: data.results,
-          tourDataLoaded: true,
-          moreData: data.more
-        });
+    let url = `http://triposo.com/api/20190906/tour.json?location_ids=Melbourne&order_by=${this.state.sortOrder}&offset=${this.state.currentOffset}&count=${this.state.resultsPerPage}&annotate=converted_price:AED&fields=intro,name,price,id,images,structured_content,booking_info,score&account=AZUHBLJH&token=luhn0k0fhlou5m4h52poe8c0fjpejzwt`;
+
+    if (this.state.searchTerm !== "") {
+      url += `&annotate=trigram:${this.state.searchTerm}&trigram=>=0.15`;
+    }
+
+    axios.get(url).then(({ data }) => {
+      this.setState({
+        tourData: data.results,
+        tourDataLoaded: true,
+        moreData: data.more
       });
+    });
   };
 
   render() {
-    // console.log("no results => ", this.state.resultsPerPage);
     return (
       <div>
-        {/* <div> */}
         <TourHeader
+          searchFunction={this.searchFunction}
+
           changeSortOrder={this.changeSortOrder}
           activeSortOrder={this.state.sortOrder}
           changeResultsPerPage={this.changeResultsPerPage}
@@ -173,7 +176,7 @@ class Tours extends Component {
         ) : (
           <Loader active inline="centered" />
         )}
-        {/* </div> */}
+
         <div className="offset-buttons">
           {this.state.tourDataLoaded && this.state.currentOffset !== 0 && (
             <Button
